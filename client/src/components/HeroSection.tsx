@@ -128,19 +128,55 @@ const HeroSection = () => {
             </div>
           </div>
           <div className={`md:w-1/2 flex justify-center transition-all duration-1000 delay-700 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
-            <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-secondary shadow-lg">
-              <div className="w-full h-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
-                {/* Placeholder until image loads */}
-                <svg className="w-20 h-20 text-primary/50" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-lg overflow-hidden border-4 border-secondary shadow-lg transform rotate-3 hover:rotate-0 transition-transform duration-500">
+              {/* Chemical structure background pattern */}
+              <div className="absolute inset-0 bg-primary/5 z-0">
+                <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" className="opacity-20">
+                  <pattern id="chemical-grid" width="50" height="50" patternUnits="userSpaceOnUse">
+                    <circle cx="10" cy="10" r="2" fill="#1a5f7a" />
+                    <circle cx="40" cy="40" r="2" fill="#1a5f7a" />
+                    <circle cx="10" cy="40" r="2" fill="#57c5b6" />
+                    <circle cx="40" cy="10" r="2" fill="#57c5b6" />
+                    <path d="M10 10 L40 40 M10 40 L40 10" stroke="#1a5f7a" strokeWidth="0.5" />
+                  </pattern>
+                  <rect width="100%" height="100%" fill="url(#chemical-grid)" />
                 </svg>
               </div>
               
-              {/* Fancy border effect */}
-              <div className="absolute inset-0 border-8 border-white opacity-20 rounded-full"></div>
+              {/* Photo container */}
+              <div className="w-full h-full overflow-hidden z-10 relative">
+                <img 
+                  src="/attached_assets/IMG_3754.jpeg" 
+                  alt="Sarthak Navade" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
               
-              {/* Pulse effect */}
-              <div className="absolute -inset-2 border-4 border-primary/30 rounded-full animate-pulse"></div>
+              {/* Fancy border effect */}
+              <div className="absolute inset-0 border-8 border-white opacity-10"></div>
+              
+              {/* Corner icons */}
+              <div className="absolute top-2 left-2 w-10 h-10 bg-white/50 backdrop-blur-sm rounded-md flex items-center justify-center z-20">
+                <svg viewBox="0 0 24 24" width="20" height="20" stroke="#1a5f7a" fill="none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M18 6L6 18M6 6l12 12" />
+                </svg>
+              </div>
+              <div className="absolute top-2 right-2 w-10 h-10 bg-white/50 backdrop-blur-sm rounded-md flex items-center justify-center z-20">
+                <svg viewBox="0 0 24 24" width="20" height="20" stroke="#1a5f7a" fill="none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="12" cy="12" r="10" />
+                  <circle cx="12" cy="12" r="4" />
+                </svg>
+              </div>
+              <div className="absolute bottom-2 left-2 w-10 h-10 bg-white/50 backdrop-blur-sm rounded-md flex items-center justify-center z-20">
+                <svg viewBox="0 0 24 24" width="20" height="20" stroke="#1a5f7a" fill="none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <polygon points="12 2 19 21 12 17 5 21 12 2" />
+                </svg>
+              </div>
+              <div className="absolute bottom-2 right-2 w-10 h-10 bg-white/50 backdrop-blur-sm rounded-md flex items-center justify-center z-20">
+                <svg viewBox="0 0 24 24" width="20" height="20" stroke="#1a5f7a" fill="none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+                </svg>
+              </div>
             </div>
           </div>
         </div>

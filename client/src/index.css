@@ -9,6 +9,27 @@
 
   body {
     @apply font-sans antialiased bg-background text-foreground;
+    background-image: 
+      radial-gradient(circle at 10% 20%, rgba(26, 95, 122, 0.03) 0%, transparent 20%),
+      radial-gradient(circle at 80% 60%, rgba(87, 197, 182, 0.03) 0%, transparent 20%),
+      radial-gradient(circle at 40% 80%, rgba(26, 95, 122, 0.03) 0%, transparent 20%),
+      radial-gradient(circle at 90% 10%, rgba(87, 197, 182, 0.03) 0%, transparent 20%);
+    background-attachment: fixed;
+  }
+  
+  section {
+    position: relative;
+    overflow-x: hidden;
+  }
+  
+  section::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, rgba(26, 95, 122, 0.1), transparent);
   }
 }
 
