@@ -1,10 +1,97 @@
 import { useEffect, useState } from 'react';
+import profileImage from '@assets/IMG_3754.jpeg';
 
 const HeroSection = () => {
   const [isVisible, setIsVisible] = useState(false);
   
   useEffect(() => {
     setIsVisible(true);
+    
+    // Create dynamic particles for background
+    const createParticles = () => {
+      const container = document.getElementById('home');
+      if (!container) return;
+      
+      const numParticles = 20;
+      
+      for (let i = 0; i < numParticles; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        
+        // Random position
+        const posX = Math.random() * container.offsetWidth;
+        const posY = Math.random() * container.offsetHeight;
+        
+        // Random delay
+        const delay = Math.random() * 15;
+        
+        particle.style.left = `${posX}px`;
+        particle.style.top = `${posY}px`;
+        particle.style.animationDelay = `${delay}s`;
+        
+        container.appendChild(particle);
+      }
+      
+      // Add molecules
+      const molecules = 5;
+      for (let i = 0; i < molecules; i++) {
+        const molecule = document.createElement('div');
+        molecule.className = 'molecule';
+        
+        // Random position
+        const posX = Math.random() * container.offsetWidth;
+        const posY = Math.random() * container.offsetHeight;
+        
+        // Random delay
+        const delay = Math.random() * 10;
+        
+        molecule.style.left = `${posX}px`;
+        molecule.style.top = `${posY}px`;
+        molecule.style.animationDelay = `${delay}s`;
+        
+        // Create SVG for molecule
+        const type = Math.floor(Math.random() * 3);
+        let svgContent = '';
+        
+        if (type === 0) {
+          // Water molecule
+          svgContent = `<svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="40" cy="20" r="15" fill="#1a5f7a" />
+            <circle cx="20" cy="55" r="15" fill="#1a5f7a" />
+            <circle cx="60" cy="55" r="15" fill="#1a5f7a" />
+            <line x1="40" y1="20" x2="20" y2="55" stroke="#1a5f7a" stroke-width="4" />
+            <line x1="40" y1="20" x2="60" y2="55" stroke="#1a5f7a" stroke-width="4" />
+          </svg>`;
+        } else if (type === 1) {
+          // Benzene
+          svgContent = `<svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="40,10 60,25 60,55 40,70 20,55 20,25" fill="none" stroke="#1a5f7a" stroke-width="3" />
+            <circle cx="40" cy="40" r="15" fill="none" stroke="#1a5f7a" stroke-width="2" />
+          </svg>`;
+        } else {
+          // CO2
+          svgContent = `<svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="20" cy="40" r="15" fill="#1a5f7a" />
+            <circle cx="60" cy="40" r="15" fill="#1a5f7a" />
+            <circle cx="40" cy="40" r="10" fill="#57c5b6" />
+            <line x1="20" y1="40" x2="60" y2="40" stroke="#1a5f7a" stroke-width="4" />
+          </svg>`;
+        }
+        
+        molecule.innerHTML = svgContent;
+        container.appendChild(molecule);
+      }
+    };
+    
+    createParticles();
+    
+    return () => {
+      const container = document.getElementById('home');
+      if (container) {
+        const particles = container.querySelectorAll('.particle, .molecule');
+        particles.forEach(particle => particle.remove());
+      }
+    };
   }, []);
 
   const handleScrollToSection = (sectionId: string) => {
@@ -43,9 +130,17 @@ const HeroSection = () => {
           </div>
           <div className={`md:w-1/2 flex justify-center transition-all duration-1000 delay-700 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
             <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-secondary shadow-lg">
-              <svg className="w-full h-full text-gray-300" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" viewBox="0 0 640 512">
-                <path d="M480 80C480 35.82 515.8 0 560 0C604.2 0 640 35.82 640 80C640 124.2 604.2 160 560 160C515.8 160 480 124.2 480 80zM0 456.1C0 445.6 2.964 435.3 8.551 426.4L225.3 81.01C231.9 70.42 243.5 64 256 64C268.5 64 280.1 70.42 286.8 81.01L412.7 281.7L460.9 202.7C464.1 196.1 472.2 192 480 192C487.8 192 495 196.1 499.1 202.7L631.1 419.1C636.9 428.6 640 439.7 640 450.9C640 484.6 612.6 512 578.9 512H55.91C25.03 512 .0006 486.1 .0006 456.1L0 456.1z" />
-              </svg>
+              <img 
+                src={profileImage} 
+                alt="Sarthak Navade" 
+                className="w-full h-full object-cover"
+              />
+              
+              {/* Fancy border effect */}
+              <div className="absolute inset-0 border-8 border-white opacity-20 rounded-full"></div>
+              
+              {/* Pulse effect */}
+              <div className="absolute -inset-2 border-4 border-primary/30 rounded-full animate-pulse"></div>
             </div>
           </div>
         </div>
@@ -63,6 +158,14 @@ const HeroSection = () => {
           <circle cx="12" cy="12" r="4" stroke="#57c5b6" strokeWidth="2"/>
         </svg>
       </div>
+      
+      {/* Additional chemistry-themed bubbles with dynamic animations */}
+      <div className="bubble" style={{top: '15%', left: '5%', width: '50px', height: '50px', animationDelay: '0s'}}></div>
+      <div className="bubble" style={{top: '25%', left: '80%', width: '70px', height: '70px', animationDelay: '1.5s'}}></div>
+      <div className="bubble" style={{top: '60%', left: '85%', width: '40px', height: '40px', animationDelay: '3s'}}></div>
+      <div className="bubble" style={{top: '75%', left: '15%', width: '60px', height: '60px', animationDelay: '4.5s'}}></div>
+      <div className="bubble" style={{top: '10%', left: '40%', width: '30px', height: '30px', animationDelay: '2s'}}></div>
+      <div className="bubble" style={{top: '50%', left: '60%', width: '45px', height: '45px', animationDelay: '5s'}}></div>
     </section>
   );
 };

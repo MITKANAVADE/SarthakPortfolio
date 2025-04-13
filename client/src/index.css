@@ -11,3 +11,138 @@
     @apply font-sans antialiased bg-background text-foreground;
   }
 }
+
+/* Background animation effects */
+.bubble {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(87, 197, 182, 0.3), rgba(26, 95, 122, 0.1));
+  animation: float 8s ease-in-out infinite;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background-color: rgba(87, 197, 182, 0.2);
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 0;
+  animation: particle-animation 15s linear infinite;
+}
+
+.molecule {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  opacity: 0.07;
+  pointer-events: none;
+  z-index: 0;
+  animation: molecule-float 20s linear infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-20px) scale(1.05);
+  }
+}
+
+@keyframes particle-animation {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.5;
+  }
+  80% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateY(-300px) translateX(100px);
+    opacity: 0;
+  }
+}
+
+@keyframes molecule-float {
+  0% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+    opacity: 0.07;
+  }
+  25% {
+    opacity: 0.1;
+  }
+  75% {
+    opacity: 0.05;
+  }
+  100% {
+    transform: translateY(-200px) translateX(100px) rotate(360deg);
+    opacity: 0.07;
+  }
+}
+
+/* Skill bar animation */
+.skill-bar {
+  height: 10px;
+  background-color: #e9ecef;
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.skill-progress {
+  height: 100%;
+  background-color: #1a5f7a;
+  border-radius: 9999px;
+  transition: width 1.5s ease-in-out;
+}
+
+/* Mobile menu */
+.mobile-menu {
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.mobile-menu.active {
+  transform: translateX(0);
+}
+
+/* Add smooth scrolling for all elements */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Animations for section elements */
+.fade-up {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1a5f7a;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #146275;
+}
