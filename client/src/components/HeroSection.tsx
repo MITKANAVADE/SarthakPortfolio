@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import profileImage from '@assets/IMG_3754.jpeg';
 
 const HeroSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -130,11 +129,12 @@ const HeroSection = () => {
           </div>
           <div className={`md:w-1/2 flex justify-center transition-all duration-1000 delay-700 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
             <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-secondary shadow-lg">
-              <img 
-                src={profileImage} 
-                alt="Sarthak Navade" 
-                className="w-full h-full object-cover"
-              />
+              <div className="w-full h-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
+                {/* Placeholder until image loads */}
+                <svg className="w-20 h-20 text-primary/50" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
               
               {/* Fancy border effect */}
               <div className="absolute inset-0 border-8 border-white opacity-20 rounded-full"></div>
