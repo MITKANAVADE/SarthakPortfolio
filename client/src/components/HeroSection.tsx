@@ -195,13 +195,48 @@ const HeroSection = () => {
         </svg>
       </div>
       
-      {/* Additional chemistry-themed bubbles with dynamic animations */}
+      {/* Enhanced chemical-themed animations */}
+      {/* Bubbles */}
       <div className="bubble" style={{top: '15%', left: '5%', width: '50px', height: '50px', animationDelay: '0s'}}></div>
       <div className="bubble" style={{top: '25%', left: '80%', width: '70px', height: '70px', animationDelay: '1.5s'}}></div>
       <div className="bubble" style={{top: '60%', left: '85%', width: '40px', height: '40px', animationDelay: '3s'}}></div>
       <div className="bubble" style={{top: '75%', left: '15%', width: '60px', height: '60px', animationDelay: '4.5s'}}></div>
       <div className="bubble" style={{top: '10%', left: '40%', width: '30px', height: '30px', animationDelay: '2s'}}></div>
       <div className="bubble" style={{top: '50%', left: '60%', width: '45px', height: '45px', animationDelay: '5s'}}></div>
+      
+      {/* Beakers with chemical reactions */}
+      <div className="beaker" style={{bottom: '15%', left: '10%', animationDelay: '0s'}}>
+        <div className="beaker-bubble" style={{left: '10px', animationDelay: '0.2s'}}></div>
+        <div className="beaker-bubble" style={{left: '25px', animationDelay: '1.5s'}}></div>
+        <div className="beaker-bubble" style={{left: '40px', animationDelay: '0.7s'}}></div>
+      </div>
+      
+      <div className="beaker" style={{top: '20%', right: '15%', animationDelay: '2s'}}>
+        <div className="beaker-bubble" style={{left: '15px', animationDelay: '0.5s'}}></div>
+        <div className="beaker-bubble" style={{left: '30px', animationDelay: '1.8s'}}></div>
+        <div className="beaker-bubble" style={{left: '35px', animationDelay: '1.2s'}}></div>
+      </div>
+      
+      {/* Chemical reaction animations */}
+      <div className="reaction" style={{top: '30%', left: '20%', animationDelay: '0s'}}></div>
+      <div className="reaction" style={{bottom: '20%', right: '25%', animationDelay: '4s'}}></div>
+      
+      {/* Periodic table elements */}
+      <div className="element" style={{top: '15%', right: '8%'}}>
+        <div className="element-number">6</div>
+        <div className="element-symbol">C</div>
+        <div className="element-name">Carbon</div>
+      </div>
+      
+      <div className="element" style={{bottom: '10%', left: '20%'}}>
+        <div className="element-number">8</div>
+        <div className="element-symbol">O</div>
+        <div className="element-name">Oxygen</div>
+      </div>
+      
+      {/* Molecular bonds */}
+      <div className="bond" style={{top: '40%', right: '30%', transform: 'rotate(45deg)'}}></div>
+      <div className="bond" style={{bottom: '35%', left: '35%', transform: 'rotate(-30deg)'}}></div>
     </section>
   );
 };

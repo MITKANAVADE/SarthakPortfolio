@@ -12,46 +12,59 @@ const InterestsSection = () => {
   
   const interests: Interest[] = [
     {
-      name: 'Music',
+      name: 'Organic Chemistry',
       icon: (
         <svg viewBox="0 0 24 24" width="28" height="28" stroke="#1a5f7a" fill="none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M9 18V5l12-2v13"></path>
-          <circle cx="6" cy="18" r="3"></circle>
-          <circle cx="18" cy="16" r="3"></circle>
+          {/* Benzene ring structure */}
+          <polygon points="12,4 16,7 16,13 12,16 8,13 8,7" fill="none" stroke="#1a5f7a" strokeWidth="1.5" />
+          <circle cx="12" cy="10" r="5" fill="none" stroke="#1a5f7a" strokeWidth="0.8" strokeDasharray="1,1" />
         </svg>
       ),
-      description: 'Listening to diverse genres of music to relax and find inspiration'
+      description: 'Researching organic compounds and their applications in pharmaceutical industries'
     },
     {
-      name: 'Badminton',
+      name: 'Pharmaceutical Manufacturing',
       icon: (
         <svg viewBox="0 0 24 24" width="28" height="28" stroke="#1a5f7a" fill="none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <circle cx="12" cy="5" r="3"></circle>
-          <line x1="12" y1="8" x2="12" y2="14"></line>
-          <path d="M5.5 17a6.5 6.5 0 0 0 13 0"></path>
-          <path d="M15 17V8l4 9"></path>
+          {/* Flask with pills */}
+          <path d="M9,3 L15,3 L15,8 C18,10 18,14 15,16 L9,16 C6,14 6,10 9,8 L9,3 Z" stroke="#1a5f7a" fill="none" />
+          <circle cx="10" cy="12" r="1.5" fill="#1a5f7a" />
+          <circle cx="14" cy="14" r="1.5" fill="#1a5f7a" />
+          <line x1="12" y1="3" x2="12" y2="4" stroke="#1a5f7a" />
+          <line x1="9" y1="16" x2="9" y2="21" stroke="#1a5f7a" />
+          <line x1="15" y1="16" x2="15" y2="21" stroke="#1a5f7a" />
+          <line x1="8" y1="21" x2="16" y2="21" stroke="#1a5f7a" />
         </svg>
       ),
-      description: 'Playing badminton regularly to stay active and competitive'
+      description: 'Studying pharmaceutical production processes and quality control methods'
     },
     {
-      name: 'Stock Market',
+      name: 'Unit Operations',
       icon: (
         <svg viewBox="0 0 24 24" width="28" height="28" stroke="#1a5f7a" fill="none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M3 3v18h18"></path>
-          <path d="m19 9-5 5-4-4-3 3"></path>
+          {/* Chemical engineering equipment */}
+          <rect x="4" y="12" width="16" height="8" stroke="#1a5f7a" fill="none" />
+          <line x1="7" y1="12" x2="7" y2="20" stroke="#1a5f7a" />
+          <line x1="12" y1="12" x2="12" y2="20" stroke="#1a5f7a" />
+          <line x1="17" y1="12" x2="17" y2="20" stroke="#1a5f7a" />
+          <path d="M8,8 C8,5 16,5 16,8 L16,12 L8,12 L8,8 Z" stroke="#1a5f7a" fill="none" />
+          <circle cx="12" cy="5" r="2" stroke="#1a5f7a" fill="none" />
         </svg>
       ),
-      description: 'Actively working in the stock market to learn investment strategies'
+      description: 'Exploring fundamental processes like distillation, extraction, and filtration'
     },
     {
-      name: 'Traveling',
+      name: 'Thermodynamics',
       icon: (
         <svg viewBox="0 0 24 24" width="28" height="28" stroke="#1a5f7a" fill="none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+          {/* Thermodynamics icon with flame and arrows */}
+          <path d="M12,21 C8.5,21 6,18.5 6,15 C6,11.5 12,3 12,3 C12,3 18,11.5 18,15 C18,18.5 15.5,21 12,21 Z" stroke="#1a5f7a" fill="none" />
+          <path d="M12,17 C13.657,17 15,15.657 15,14 C15,12.343 12,9 12,9 C12,9 9,12.343 9,14 C9,15.657 10.343,17 12,17 Z" stroke="#1a5f7a" fill="#1a5f7a" fillOpacity="0.2" />
+          <line x1="8" y1="8" x2="6" y2="6" stroke="#1a5f7a" />
+          <line x1="16" y1="8" x2="18" y2="6" stroke="#1a5f7a" />
         </svg>
       ),
-      description: 'Exploring new places to gain diverse perspectives and experiences'
+      description: 'Analyzing energy transformations and chemical reaction equilibriums'
     }
   ];
   
