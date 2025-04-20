@@ -3,13 +3,15 @@ import { drizzle } from 'drizzle-orm/neon-serverless';
 import ws from "ws";
 import * as schema from "@shared/schema";
 
+// Configure Neon database for WebSocket connections
 neonConfig.webSocketConstructor = ws;
 
-if (!process.env.DATABASE_URL) {
-  throw new Error(
-    "DATABASE_URL must be set. Did you forget to provision a database?",
-  );
-}
+// Check for database connection - use a default local URL for development if not provided
+const DATABASE_URL = process.env.DATABASE_URL || 
+  'postgresql://postgres:postgres@localhost:5432/portfolio';
 
-export const pool = new Pool({ connectionString: process.env.DATABASE_URL });
+console.log("Database connection initialized");
+
+// Create the connection pool
+export const pool = new Pool({ connectionString: DATABASE_URL });
 export const db = drizzle({ client: pool, schema });
