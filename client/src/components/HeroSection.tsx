@@ -146,7 +146,7 @@ const HeroSection = () => {
               {/* Photo container */}
               <div className="w-full h-full overflow-hidden z-10 relative">
                 <img 
-                  src="/attached_assets/IMG_3754.jpeg" 
+                  src="/PF.jpeg" 
                   alt="Sarthak Navade" 
                   className="w-full h-full object-cover"
                 />
