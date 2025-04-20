@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import profileImage from '@assets/PF.jpeg';
 
 const HeroSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -147,7 +146,7 @@ const HeroSection = () => {
               {/* Photo container */}
               <div className="w-full h-full overflow-hidden z-10 relative">
                 <img 
-                  src={profileImage} 
+                  src="/PF.jpeg" 
                   alt="Sarthak Navade" 
                   className="w-full h-full object-cover"
                 />
